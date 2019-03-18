@@ -26,6 +26,7 @@ import com.lemospadilha.curso.boot.repositories.CidadeRepository;
 import com.lemospadilha.curso.boot.repositories.ClienteRepository;
 import com.lemospadilha.curso.boot.repositories.EnderecoRepository;
 import com.lemospadilha.curso.boot.repositories.EstadoRepository;
+import com.lemospadilha.curso.boot.repositories.ItemPedidoRepository;
 import com.lemospadilha.curso.boot.repositories.PagamentoRepository;
 import com.lemospadilha.curso.boot.repositories.PedidoRepository;
 import com.lemospadilha.curso.boot.repositories.ProdutoRepository;
@@ -56,6 +57,9 @@ public class CursomcApplication implements CommandLineRunner{
 	
 	@Autowired 
 	PagamentoRepository pagamentoRepository;
+	
+	@Autowired
+	ItemPedidoRepository itemPedidoRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -117,7 +121,12 @@ public class CursomcApplication implements CommandLineRunner{
 		
 		pedidoRepository.saveAll(Arrays.asList(ped1,ped2));
 		pagamentoRepository.saveAll(Arrays.asList(pagto1,pagto2));
-		//ItemPedido ip1 = new ItemPedido(ped, produto, desconto, quantidade, preco)
+		
+		ItemPedido ip1 = new ItemPedido(ped1, p1,0.00, 1, 2000.00);
+		ItemPedido ip2 = new ItemPedido(ped1, p3,0.00, 2, 80.00);
+		ItemPedido ip3 = new ItemPedido(ped1, p2,0.00, 1, 800.00);
+		
+		itemPedidoRepository.saveAll(Arrays.asList(ip1,ip2,ip3));
 	}
 
 }

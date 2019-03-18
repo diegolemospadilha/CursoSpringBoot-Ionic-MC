@@ -9,20 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lemospadilha.curso.boot.domain.Cliente;
-import com.lemospadilha.curso.boot.services.ClienteService;
+import com.lemospadilha.curso.boot.domain.Pedido;
+import com.lemospadilha.curso.boot.services.PedidoService;
 
 @RestController
-@RequestMapping(value="/clientes")
-public class ClienteResource {
+@RequestMapping(value="/pedidos")
+public class PedidoResource {
 	
 	@Autowired
-	ClienteService clienteService;
+	PedidoService PedidoService;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public ResponseEntity<Cliente> findById(@PathVariable Integer id) {
+	public ResponseEntity<Pedido> findById(@PathVariable Integer id) {
 		
-		Cliente obj = clienteService.findById(id);		
+		Pedido obj = PedidoService.findById(id);		
 		return ResponseEntity.ok().body(obj);
 	}
 	
