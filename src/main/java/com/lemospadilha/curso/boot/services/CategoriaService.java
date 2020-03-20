@@ -5,9 +5,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.lemospadilha.curso.boot.domain.Categoria;
+import com.lemospadilha.curso.boot.dto.CategoriaDTO;
 import com.lemospadilha.curso.boot.repositories.CategoriaRepository;
 import com.lemospadilha.curso.boot.services.exceptions.DataIntegrityException;
 import com.lemospadilha.curso.boot.services.exceptions.ObjectNotFoundException;
@@ -47,6 +51,15 @@ public class CategoriaService {
 
 	public List<Categoria> findAll() {
 		return categoryRepository.findAll();
+	}
+	
+	public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+		return categoryRepository.findAll(pageRequest);
+	}
+	
+	public Categoria fromDTO(CategoriaDTO catDTO) {
+		return new Categoria(catDTO.getId(), catDTO.getNome());
 	}
 	
 	
