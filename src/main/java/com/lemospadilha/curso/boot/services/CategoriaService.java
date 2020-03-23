@@ -20,10 +20,10 @@ import com.lemospadilha.curso.boot.services.exceptions.ObjectNotFoundException;
 public class CategoriaService {
 	
 	@Autowired 
-	private CategoriaRepository categoryRepository;
+	private CategoriaRepository repo;
 	
 	public Categoria findById(Integer id) {
-		Optional<Categoria> obj = categoryRepository.findById(id);
+		Optional<Categoria> obj = repo.findById(id);
 		
 		return obj.orElseThrow( () -> new ObjectNotFoundException(
 				"Objeto não encontrado Id: " + id + ", Tipo: " + Categoria.class.getName()));
@@ -31,18 +31,18 @@ public class CategoriaService {
 
 	public Categoria insert(Categoria categoria) {
 		categoria.setId(null);
-		return categoryRepository.save(categoria);
+		return repo.save(categoria);
 	}
 
 	public Categoria update(Categoria categoria) {
 		findById(categoria.getId());
-		return categoryRepository.save(categoria);
+		return repo.save(categoria);
 	}
 
 	public void delete(Integer id) {
 		findById(id);
 		try {
-			categoryRepository.deleteById(id);
+			repo.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos");
 		}
@@ -50,17 +50,15 @@ public class CategoriaService {
 	}
 
 	public List<Categoria> findAll() {
-		return categoryRepository.findAll();
+		return repo.findAll();
 	}
 	
 	public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-		return categoryRepository.findAll(pageRequest);
+		return repo.findAll(pageRequest);
 	}
 	
-	public Categoria fromDTO(CategoriaDTO catDTO) {
-		return new Categoria(catDTO.getId(), catDTO.getNome());
+	public Categoria fromDTO(CategoriaDTO dto) {
+		return new Categoria(dto.getId(), dto.getNome());
 	}
-	
-	
 }
