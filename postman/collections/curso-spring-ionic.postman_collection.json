@@ -248,6 +248,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Criar cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Maria Pereira\",\n    \"email\": \"maria@gmail.com\",\n    \"cpfOuCnpj\": \"52740225709\",\n    \"tipo\": 1,\n    \"telefone1\": \"(41) 98899-7854\",\n    \"telefone2\": \"(41) 98899-3434\",\n    \"logradouro\":\"Rua Tevez\",\n\t\"numero\":900,\n\t\"complemento\": \"Apto 401\",\n\t\"bairro\":\"Centro Civico\",\n\t\"cep\":\"81670-020\",\n\t\"cidadeId\":1\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/clientes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
