@@ -8,6 +8,9 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.lemospadilha.curso.boot.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -26,6 +29,7 @@ public class ClienteNewDTO implements Serializable {
 	private Integer tipo;
 	
 	@NotEmpty(message = "Preenchimento obrigatório")
+	@Length(min = 5, max = 60, message = "O campo logradouro deve conter entre 5 e 60 caracteres.")
 	private String logradouro;
 	
 	@NotEmpty(message = "Preenchimento obrigatório")
@@ -35,6 +39,7 @@ public class ClienteNewDTO implements Serializable {
 	private String complemento;
 	
 	@NotEmpty(message = "Preenchimento obrigatório")
+	@Length(min = 5, max = 60, message = "O campo logradouro deve conter entre 5 e 60 caracteres.")
 	private String bairro;
 	
 	@NotEmpty(message = "Preenchimento obrigatório")
