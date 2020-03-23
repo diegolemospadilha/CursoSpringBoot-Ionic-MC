@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "ddf7f6fc-cac8-529e-7622-2e959b3b6410",
+		"name": "curso-spring-ionic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar todas as categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/categorias",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar categorias por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/categorias/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"categorias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar clientes por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/clientes/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar pedidos por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/pedidos/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pedidos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar categoria por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{host}}/categorias/8",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"categorias",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar categorias paginadas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/categorias/page?page=0&linesPerPage=&orderBy=&direction=DESC",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"categorias",
+						"page"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "linesPerPage",
+							"value": ""
+						},
+						{
+							"key": "orderBy",
+							"value": ""
+						},
+						{
+							"key": "direction",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Infantil\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/categorias",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar categorias",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Ferramentas\"\n}"
+				},
+				"url": {
+					"raw": "{{host}}/categorias/9",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"categorias",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/clientes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar clientes paginada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/clientes/page",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes",
+						"page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar cliente por id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Maria Pereira\",\n    \"email\": \"maria@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/clientes/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Maria Pereira\",\n    \"email\": \"maria@gmail.com\",\n    \"cpfOuCnpj\": \"52740225709\",\n    \"tipo\": 1,\n    \"telefone1\": \"(41) 98899-7854\",\n    \"telefone2\": \"(41) 98899-3434\",\n    \"logradouro\":\"Rua Tevez\",\n\t\"numero\":900,\n\t\"complemento\": \"Apto 401\",\n\t\"bairro\":\"Centro Civico\",\n\t\"cep\":\"81670-020\",\n\t\"cidadeId\":1\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/clientes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
