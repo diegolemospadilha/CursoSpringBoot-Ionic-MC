@@ -29,9 +29,9 @@ public enum EstadoPagamento {
 			return null;
 		}
 		
-		for(EstadoPagamento tc: EstadoPagamento.values()) {
-			if(cod.equals(tc.cod)) {
-				return tc;
+		for(EstadoPagamento e: EstadoPagamento.values()) {
+			if(cod.equals(e.cod)) {
+				return e;
 			}
 		}
 		
