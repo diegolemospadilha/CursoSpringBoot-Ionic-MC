@@ -16,13 +16,13 @@ Para executar o projeto, será necessário instalar os seguintes programas:
 cd "diretorio de sua preferencia"
 git clone https://github.com/diegolemospadilha/CursoSpringBoot-Ionic-MC.git
 ```
-Se você já possui uma IDE Eclipse instalada, recomendo a instalação do plugin do STS pelo Eclipse Marketing Place( Help > Eclipse Marketplace). Caso não tenha uma IDE, utilize faça o download do [STS](https://spring.io/tools) ( IDE baseada no Eclipse para desenvolvimento de aplicações Spring).
+Se você já possui uma IDE Eclipse instalada, recomendo a instalação do plugin do STS pelo Eclipse MarketPlace( Help > Eclipse Marketplace). Caso não tenha uma IDE ainda,faça o download do [STS](https://spring.io/tools) ( IDE baseada no Eclipse para desenvolvimento de aplicações Spring).
 
-Após isso faça a importação do projeto *(File > Import Spring Getting Start Content)* , apontando como diretório de referência o local onde você clonou o projeto.
+Após isso, faça a importação do projeto *(File > Import Spring Getting Start Content)* , apontando como diretório de referência o local onde você clonou o projeto.
 
 ### Rodando o projeto
-- Primeiramente, faça o download das dependências do projeto, clicando com o botão direito *(Maven > Update Project > Selecione o projeto e clique em OK)*.
-- Depois clique com o botão direito do Mouse, selecione Run As> Java Application ou Spring Boot App).
+- Primeiramente, faça o download das dependências do projeto, clicando com o botão direito _(Maven > Update Project > Selecione o projeto e clique em OK)_.
+- Depois clique com o botão direito do Mouse, selecione *(Run As> Java Application ou Spring Boot App)*.
 - O seu projeto estará disponível na porta 8080.
 - Para ver as requisições disponiveis atualmente acesse a pasta do projeto postman/collections e importe o arquivo contido dentro deste diretório em seu Postman *(Aba Collections > Import)*.
 - Será criada uma nova collection para você chamada **curso-spring-ionic**, na qual conterá todos os endpoints criados até o momento.
