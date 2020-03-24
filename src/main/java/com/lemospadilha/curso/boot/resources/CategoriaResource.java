@@ -26,19 +26,19 @@ import com.lemospadilha.curso.boot.services.CategoriaService;
 public class CategoriaResource {
 	
 	@Autowired
-	CategoriaService categoriaService;
+	CategoriaService service;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<Categoria> findById(@PathVariable Integer id) {
 		
-		Categoria obj = categoriaService.findById(id);		
+		Categoria obj = service.findById(id);		
 		return ResponseEntity.ok().body(obj);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Void> insert(@Valid @RequestBody CategoriaDTO categoriaDTO){
-		Categoria categoria = categoriaService.fromDTO(categoriaDTO);
-		categoria = categoriaService.insert(categoria);
+		Categoria categoria = service.fromDTO(categoriaDTO);
+		categoria = service.insert(categoria);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				  .path("/{id}").buildAndExpand(categoria.getId()).toUri();
 		
@@ -47,9 +47,9 @@ public class CategoriaResource {
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Void> update(@Valid @RequestBody CategoriaDTO categoriaDTO, @PathVariable Integer id ){
-		Categoria categoria = categoriaService.fromDTO(categoriaDTO);
+		Categoria categoria = service.fromDTO(categoriaDTO);
 		categoria.setId(id);
-		categoria = categoriaService.update(categoria);
+		categoria = service.update(categoria);
 		
 		return ResponseEntity.noContent().build();
 	}
@@ -57,14 +57,14 @@ public class CategoriaResource {
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public ResponseEntity<Categoria> delete(@PathVariable Integer id) {
 		
-		categoriaService.delete(id);		
+		service.delete(id);		
 		return ResponseEntity.noContent().build();
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<List<CategoriaDTO>> findAll() {
 		
-		List<Categoria> listCategorias = categoriaService.findAll();
+		List<Categoria> listCategorias = service.findAll();
 		List<CategoriaDTO> listDto = listCategorias.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
 	}
@@ -77,7 +77,7 @@ public class CategoriaResource {
 			@RequestParam(value="direction", defaultValue="ASC") String direction
 			) {
 		
-		Page<Categoria> listCategorias = categoriaService.findPage(page, linesPerPage, orderBy, direction);
+		Page<Categoria> listCategorias = service.findPage(page, linesPerPage, orderBy, direction);
 		Page<CategoriaDTO> listDto = listCategorias.map(obj -> new CategoriaDTO(obj));
 		return ResponseEntity.ok().body(listDto);
 	}

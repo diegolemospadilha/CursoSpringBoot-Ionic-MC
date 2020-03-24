@@ -1,108 +1,82 @@
 {
+	"variables": [],
 	"info": {
-		"_postman_id": "ddf7f6fc-cac8-529e-7622-2e959b3b6410",
 		"name": "curso-spring-ionic",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "603669f7-2217-85c9-57c1-e358c7ba2da5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Consultar todas as categorias",
 			"request": {
+				"url": "{{host}}/categorias",
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}/categorias",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"categorias"
-					]
-				}
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Consultar categorias por id",
 			"request": {
+				"url": "{{host}}/categorias/1",
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}/categorias/1",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"categorias",
-						"1"
-					]
-				}
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Consultar clientes por id",
 			"request": {
+				"url": "{{host}}/clientes/1",
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}/clientes/1",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"clientes",
-						"1"
-					]
-				}
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Consultar pedidos por id",
 			"request": {
+				"url": "{{host}}/pedidos/1",
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}/pedidos/1",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"pedidos",
-						"1"
-					]
-				}
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Deletar categoria por id",
 			"request": {
+				"url": "{{host}}/categorias/8",
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "{{host}}/categorias/8",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"categorias",
-						"8"
-					]
-				}
+				"body": {},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Consultar categorias paginadas",
 			"request": {
-				"method": "GET",
-				"header": [],
 				"url": {
 					"raw": "{{host}}/categorias/page?page=0&linesPerPage=&orderBy=&direction=DESC",
 					"host": [
@@ -129,14 +103,23 @@
 							"key": "direction",
 							"value": "DESC"
 						}
-					]
-				}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Criar categoria",
 			"request": {
+				"url": "{{host}}/categorias",
 				"method": "POST",
 				"header": [
 					{
@@ -148,21 +131,14 @@
 					"mode": "raw",
 					"raw": "{\n  \"nome\": \"Infantil\"\n}"
 				},
-				"url": {
-					"raw": "{{host}}/categorias",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"categorias"
-					]
-				}
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Atualizar categorias",
 			"request": {
+				"url": "{{host}}/categorias/9",
 				"method": "PUT",
 				"header": [
 					{
@@ -174,107 +150,77 @@
 					"mode": "raw",
 					"raw": "{\n  \"nome\": \"Ferramentas\"\n}"
 				},
-				"url": {
-					"raw": "{{host}}/categorias/9",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"categorias",
-						"9"
-					]
-				}
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Consultar clientes",
 			"request": {
+				"url": "{{host}}/clientes",
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}/clientes",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"clientes"
-					]
-				}
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Consultar clientes paginada",
 			"request": {
+				"url": "{{host}}/clientes/page",
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}/clientes/page",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"clientes",
-						"page"
-					]
-				}
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Atualizar cliente por id",
 			"request": {
+				"url": "{{host}}/clientes/2",
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Maria Pereira\",\n    \"email\": \"maria@gmail.com\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": "{\n\t\"nome\": \"Maria Pereira\",\n    \"email\": \"mariajoana@gmail.com\"\n}"
 				},
-				"url": {
-					"raw": "{{host}}/clientes/1",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"clientes",
-						"1"
-					]
-				}
+				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Criar cliente",
 			"request": {
+				"url": "{{host}}/clientes",
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nome\": \"Maria Pereira\",\n    \"email\": \"maria@gmail.com\",\n    \"cpfOuCnpj\": \"52740225709\",\n    \"tipo\": 1,\n    \"telefone1\": \"(41) 98899-7854\",\n    \"telefone2\": \"(41) 98899-3434\",\n    \"logradouro\":\"Rua Tevez\",\n\t\"numero\":900,\n\t\"complemento\": \"Apto 401\",\n\t\"bairro\":\"Centro Civico\",\n\t\"cep\":\"81670-020\",\n\t\"cidadeId\":1\n\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": "{\n\t\"nome\": \"Maria Pereira\",\n    \"email\": \"mariajoana@gmail.com\",\n    \"cpfOuCnpj\": \"01794714570\",\n    \"tipo\": 1,\n    \"telefone1\": \"(41) 98899-7854\",\n    \"telefone2\": \"(41) 98899-3434\",\n    \"logradouro\":\"Rua Tevez\",\n\t\"numero\":900,\n\t\"complemento\": \"Apto 401\",\n\t\"bairro\":\"Centro Civico\",\n\t\"cep\":\"81670-020\",\n\t\"cidadeId\":1\n\n}"
 				},
-				"url": {
-					"raw": "{{host}}/clientes",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"clientes"
-					]
-				}
+				"description": ""
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
