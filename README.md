@@ -3,8 +3,26 @@
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
   </a>
 </p>
+<p align="center">
+	<strong>API REST backend Curso Nelio Alves</strong>
+</p>
+
+<p align="center">
+  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rodando-o-projeto">Rodando o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ 
+</p>
+
 
 Este projeto está sendo construído com base no curso [Spring Boot, Hibernate, REST, Ionic, JWT, S3, MySQL, MongoDB](https://www.udemy.com/course-dashboard-redirect/?course_id=1360966) ofertado pelo professor [Nelio Alves](https://github.com/acenelio) na Udemy.
+
+
+### Tecnologias
+- [SpringBoot](https://spring.io/projects/spring-boot)
+- [MySQL](https://www.mysql.com/)
+- [Amazon S3](https://aws.amazon.com/pt/s3/)
 
 ### Getting Started
 
@@ -15,7 +33,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:
 - [Eclipse: Para desenvolvimento do projeto](https://www.eclipse.org/downloads/packages/release/helios/sr1/eclipse-ide-java-ee-developers)
 - [Postman: Utilizado para simulação das requisições](https://www.postman.com/downloads/)
 
-### Instalação
+### 💻 Instalação
  Para instalação deste projeto em sua máquina, você deve clonà-lo utilizando um repositório de sua preferência
  
  ```shell

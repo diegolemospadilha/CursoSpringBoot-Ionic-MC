@@ -323,6 +323,50 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Criar um pedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cliente\" : {\"id\" : 1},\n\t\"enderecoDeEntrega\" : {\"id\" : 1},\n\t\"pagamento\" : {\n\t\t\"numeroDeParcelas\" : 10,\n\t\t\"@type\": \"pagamentoComCartao\"\n\t},\n\t\"itens\" : \n\t[\n\t\t{\n\t\t\t\"quantidade\" : 2,\n\t\t\t\"produto\" : {\"id\" : 3}\n\t\t},\n\t\t{\n\t\t\t\"quantidade\" : 1,\n\t\t\t\"produto\" : {\"id\" : 1}\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/pedidos",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar pedido por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/pedidos/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pedidos",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
