@@ -20,6 +20,7 @@ import com.lemospadilha.curso.boot.domain.PagamentoComCartao;
 import com.lemospadilha.curso.boot.domain.Pedido;
 import com.lemospadilha.curso.boot.domain.Produto;
 import com.lemospadilha.curso.boot.domain.enums.EstadoPagamento;
+import com.lemospadilha.curso.boot.domain.enums.Perfil;
 import com.lemospadilha.curso.boot.domain.enums.TipoCliente;
 import com.lemospadilha.curso.boot.repositories.CategoriaRepository;
 import com.lemospadilha.curso.boot.repositories.CidadeRepository;
@@ -53,13 +54,13 @@ public class DBService {
 	private EnderecoRepository enderecoRepository;
 
 	@Autowired
-	PedidoRepository pedidoRepository;
+	private PedidoRepository pedidoRepository;
 
 	@Autowired
-	PagamentoRepository pagamentoRepository;
+	private PagamentoRepository pagamentoRepository;
 
 	@Autowired
-	ItemPedidoRepository itemPedidoRepository;
+	private ItemPedidoRepository itemPedidoRepository;
 	
 	@Autowired
 	private BCryptPasswordEncoder pe;
@@ -212,15 +213,22 @@ public class DBService {
 
 		Cliente cli1 = new Cliente(null, "Diego L Padilha", "diegolp.development@gmail.com", pe.encode("123"), "36378912377", TipoCliente.PESSOAFISICA);
 		cli1.getTelefones().addAll(Arrays.asList("37363323", "95958789"));
-
+		
+		Cliente cli2 = new Cliente(null, "Diego Bastian", "diegolp.development@gmail.com", pe.encode("123"), "36378912377", TipoCliente.PESSOAFISICA);
+		cli2.getTelefones().addAll(Arrays.asList("90123323", "88858789"));
+		cli2.addPerfis(Perfil.ADMIN);
+		
 		Endereco end1 = new Endereco(null, "Rua das Flores", "300", "Apto 345", "Fazenda Velha", "89359125", cli1,
 				cid1);
 		Endereco end2 = new Endereco(null, "Rua Alagoas", "52", "Apto 89", "Costeira", "8777125", cli1, cid1);
+		
+		Endereco end3 = new Endereco(null, "Rua Ahú", "2031", null, "Centro", "8130125", cli2, cid1);
 
 		cli1.getEnderecos().addAll(Arrays.asList(end1, end2));
+		cli2.getEnderecos().addAll(Arrays.asList(end3));
 
-		clienteRepository.saveAll(Arrays.asList(cli1));
-		enderecoRepository.saveAll(Arrays.asList(end1, end2));
+		clienteRepository.saveAll(Arrays.asList(cli1, cli2));
+		enderecoRepository.saveAll(Arrays.asList(end1, end2, end3));
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		Pedido ped1 = new Pedido(null, sdf.parse("30/12/2017 10:32"), cli1, end1);

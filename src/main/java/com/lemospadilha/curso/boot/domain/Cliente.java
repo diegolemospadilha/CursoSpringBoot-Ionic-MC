@@ -5,17 +5,20 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.lemospadilha.curso.boot.domain.enums.Perfil;
 import com.lemospadilha.curso.boot.domain.enums.TipoCliente;
 
 @Entity
@@ -40,12 +43,16 @@ public class Cliente implements Serializable{
 	@CollectionTable(name="TELEFONE")
 	private Set<String> telefones = new HashSet<>();
 	
+	@ElementCollection(fetch = FetchType.EAGER)
+	@CollectionTable(name="PERFIS")
+	private Set<Integer> perfis = new HashSet<>();
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
 	
 	public Cliente() {
-		
+		addPerfis(Perfil.CLIENTE);
 	}
 
 	public Cliente(Integer id, String nome, String email, String senha, String cpfOuCnpj, TipoCliente tipo) {
@@ -56,6 +63,7 @@ public class Cliente implements Serializable{
 		this.senha = senha;
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipo = (tipo == null) ? null : tipo.getCod();
+		addPerfis(Perfil.CLIENTE);
 	}
 
 	public Integer getId() {
@@ -81,13 +89,22 @@ public class Cliente implements Serializable{
 	public String getSenha() {
 		return senha;
 	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	
+	public Set<Perfil> getPerfis() {
+		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
+	}
+
+	public void addPerfis(Perfil perfil) {
+		perfis.add(perfil.getCod());
 	}
 
 	public String getCpfOuCnpj() {
@@ -117,7 +134,7 @@ public class Cliente implements Serializable{
 	public Set<String> getTelefones() {
 		return telefones;
 	}
-
+	
 	public void setTelefones(Set<String> telefones) {
 		this.telefones = telefones;
 	}
