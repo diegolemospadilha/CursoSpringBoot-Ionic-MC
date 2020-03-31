@@ -1,5 +1,7 @@
 package com.lemospadilha.curso.boot.services;
 
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
@@ -10,5 +12,9 @@ public interface EmailService {
 	
 	void sendEmail(SimpleMailMessage msg);
 	
-	void sendOrderConfirmatioEmail(Pedido obj);
+	void sendOrderConfirmationEmail(Pedido obj);
+	
+	void sendHtmlEmail(MimeMessage msg);
+	
+	void sendOrderConfirmationHtmlEmail(Pedido obj);
 }
