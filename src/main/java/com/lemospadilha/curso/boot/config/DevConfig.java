@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
 
 import com.lemospadilha.curso.boot.services.DBService;
 import com.lemospadilha.curso.boot.services.EmailService;
-import com.lemospadilha.curso.boot.services.MockEmailService;
+import com.lemospadilha.curso.boot.services.SmtpEmailService;
 
 @Configuration
 @Profile("dev")
@@ -32,6 +32,6 @@ public class DevConfig {
 
 	@Bean
 	public EmailService emailService() {
-		return new MockEmailService();
+		return new SmtpEmailService();
 	}
 }
