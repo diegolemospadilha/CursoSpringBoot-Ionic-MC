@@ -44,15 +44,21 @@
 			"name": "Consultar clientes por id",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWVnb2xwMS5kZXZlbG9wbWVudEBnbWFpbC5jb20iLCJleHAiOjE1ODYzNTQ4OTh9.qIRh-RpauysTtn0fHvNMuNkgmQhedoEfAoMHw7AMKF54hQIp-nnTQTvsceht1uYLvN8VVD37dfx6J5cUMQz9Wg",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "{{host}}/clientes/1",
+					"raw": "{{host}}/clientes/2",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"clientes",
-						"1"
+						"2"
 					]
 				}
 			},
@@ -62,7 +68,13 @@
 			"name": "Consultar pedidos por id",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWVnb2xwLmRldmVsb3BtZW50QGdtYWlsLmNvbSIsImV4cCI6MTU4NjM1MTE5NX0.u_Ow6yQfwUdNl1gXaTYnyNxCDJ2A13D365bQLVp3yiUmSVdHQ2Oy6HVwzeetKBGyNTNcHkuj3qMOI6xeswHENQ",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "{{host}}/pedidos/1",
 					"host": [
@@ -164,6 +176,11 @@
 					{
 						"key": "Content-Type",
 						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWVnb2xwMS5kZXZlbG9wbWVudEBnbWFpbC5jb20iLCJleHAiOjE1ODYzNTIxNDh9.I-MY3x9ZumWgosm9xaP_AlO4tu9dro-OxH9KWwwwwmOCTqWLyVtMyZwSoRp-qlDakaf41IbrBMdwD6UdKurM3g",
+						"type": "text"
 					}
 				],
 				"body": {
@@ -328,7 +345,13 @@
 			"name": "Criar um pedido",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWVnb2xwMS5kZXZlbG9wbWVudEBnbWFpbC5jb20iLCJleHAiOjE1ODYzNTY1NzZ9.ZITc3XWJmTUiCk1On_R6yAAhqBAP_QGq6Pf86XXZTHn6SvOCjkZhyFdHqF6c1ASfGFXMrmiBrjQjWMoPlFGAcg",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"cliente\" : {\"id\" : 1},\n\t\"enderecoDeEntrega\" : {\"id\" : 1},\n\t\"pagamento\" : {\n\t\t\"numeroDeParcelas\" : 10,\n\t\t\"@type\": \"pagamentoComCartao\"\n\t},\n\t\"itens\" : \n\t[\n\t\t{\n\t\t\t\"quantidade\" : 2,\n\t\t\t\"produto\" : {\"id\" : 3}\n\t\t},\n\t\t{\n\t\t\t\"quantidade\" : 1,\n\t\t\t\"produto\" : {\"id\" : 1}\n\t\t}\n\t]\n}",
@@ -375,7 +398,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"email\": \"diegolp.development@gmail.com\",\n\t\"senha\": \"123\"\n}",
+					"raw": "{\n\t\"email\": \"diegolp1.development@gmail.com\",\n\t\"senha\": \"123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -389,6 +412,30 @@
 					],
 					"path": [
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWVnb2xwMS5kZXZlbG9wbWVudEBnbWFpbC5jb20iLCJleHAiOjE1ODYzNjA3NzN9.nT9QUeEVD64i0BSPQr-lKWjlfY7ZJFfr757o3Y4piaGER-vVOU12aKeTVkOawqJuqZAo9G-Hy8XP-Nukep7now",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/auth/refresh-token",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"refresh-token"
 					]
 				}
 			},
