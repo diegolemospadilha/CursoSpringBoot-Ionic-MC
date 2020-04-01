@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ddf7f6fc-cac8-529e-7622-2e959b3b6410",
+		"_postman_id": "d098f868-a285-40b5-8bbc-98612c588696",
 		"name": "curso-spring-ionic",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -363,6 +363,32 @@
 					"path": [
 						"pedidos",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"diegolp.development@gmail.com\",\n\t\"senha\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"login"
 					]
 				}
 			},
