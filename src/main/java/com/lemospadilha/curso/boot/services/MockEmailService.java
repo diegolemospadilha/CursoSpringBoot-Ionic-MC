@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 
+import com.lemospadilha.curso.boot.domain.Cliente;
 import com.lemospadilha.curso.boot.domain.Pedido;
 
 public class MockEmailService extends AbstractEmailService {
@@ -28,6 +29,12 @@ public class MockEmailService extends AbstractEmailService {
 
 	@Override
 	public void sendOrderConfirmationHtmlEmail(Pedido obj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sendNewPassword(Cliente cliente, String newPass) {
 		// TODO Auto-generated method stub
 		
 	}
