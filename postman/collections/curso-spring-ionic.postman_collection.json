@@ -440,6 +440,61 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Recuperando senha de usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"diegolp.development@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/forgot",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar imagem de perfil  para clientes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/lemospadilha/Downloads/avatar-2027366_1280.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/clientes/picture",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes",
+						"picture"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
