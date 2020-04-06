@@ -531,6 +531,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Consultar Estados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/estados",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"estados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar cidades por estado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/estados/2/cidades",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"estados",
+						"2",
+						"cidades"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
