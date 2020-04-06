@@ -440,6 +440,133 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Recuperando senha de usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"diegolp.development@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/forgot",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar imagem de perfil  para clientes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWVnb2xwMS5kZXZlbG9wbWVudEBnbWFpbC5jb20iLCJleHAiOjE1ODY0NDI1NjJ9.MwOeEzJILukitrgNuIkTVPqOIElq62Q_VRcOSp701dlOEEjiGwlwevZcMWg_AABi_jFUWozR8TImRlIogn3N3g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/lemospadilha/Downloads/man-3414477_1280.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/clientes/picture",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes",
+						"picture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar cliente por e-mail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaWVnb2xwMS5kZXZlbG9wbWVudEBnbWFpbC5jb20iLCJleHAiOjE1ODY3ODA3OTh9.UFZ_wL_NXEufrxOK3m3WOu3O2GS4E9HJSJ5c97i3XPQv8rAodbz_wowy5Q8ZG1-bcBdGDvfnpyT6wKerB0GUoQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/clientes/email?value=diegolp1.development@gmail.com",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clientes",
+						"email"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "diegolp1.development@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Estados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/estados",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"estados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar cidades por estado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/estados/2/cidades",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"estados",
+						"2",
+						"cidades"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
