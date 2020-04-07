@@ -15,8 +15,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 import com.lemospadilha.curso.boot.security.JWTAuthenticationFilter;
 import com.lemospadilha.curso.boot.security.JWTAuthorizationFilter;
@@ -62,14 +62,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	 @Bean
-	  CorsConfigurationSource corsConfigurationSource() {
+	 public CorsFilter corsConfigurationSource() {
 	    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 	    CorsConfiguration config = new CorsConfiguration();
+	    config.setAllowCredentials(true);
 	    config.setAllowedOrigins(Arrays.asList("http://localhost:8100"));	   
 	    config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept"));
 	    config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "OPTIONS", "DELETE", "PATCH"));
 	    source.registerCorsConfiguration("/**", config);
-	    return source;
+	    return new CorsFilter(source);
 	  }
 	 
 	 @Bean
