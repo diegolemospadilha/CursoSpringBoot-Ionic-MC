@@ -15,8 +15,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
 
 import com.lemospadilha.curso.boot.security.JWTAuthenticationFilter;
 import com.lemospadilha.curso.boot.security.JWTAuthorizationFilter;
@@ -62,15 +62,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	 @Bean
-	 public CorsFilter corsConfigurationSource() {
+	 public CorsConfigurationSource corsConfigurationSource() {
 	    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 	    CorsConfiguration config = new CorsConfiguration();
+	    config.setAllowedOrigins(Arrays.asList("*"));
 	    config.setAllowCredentials(true);
-	    config.setAllowedOrigins(Arrays.asList("http://localhost:8100"));	   
-	    config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept"));
-	    config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "OPTIONS", "DELETE", "PATCH"));
+	    config.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers","Access-Control-Allow-Origin","Access-Control-Request-Method", "Access-Control-Request-Headers","Origin","Cache-Control", "Content-Type", "Authorization"));
+	    config.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));	   
 	    source.registerCorsConfiguration("/**", config);
-	    return new CorsFilter(source);
+	    return source;
 	  }
 	 
 	 @Bean
