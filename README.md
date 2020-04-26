@@ -1,7 +1,7 @@
 
-<p align="center">
-	<strong>API REST backend Curso Nelio Alves</strong>
-</p>
+<h1 align="center">
+	<strong>API REST backend Curso Nelio Alves</strong><br>
+</h1>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
