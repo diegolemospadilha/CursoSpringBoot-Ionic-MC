@@ -1,10 +1,15 @@
+
+<p align="center">
+	<h1>API REST backend Curso Nelio Alves</h1>
+</p>
+
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
   </a>
-</p>
-<p align="center">
-	<strong>API REST backend Curso Nelio Alves</strong>
+ <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/diegolemospadilha/CursoSpringBoot-Ionic-MC">
+ <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/diegolemospadilha/CursoSpringBoot-Ionic-MC?color=green">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/diegolemospadilha/CursoSpringBoot-Ionic-MC">
 </p>
 
 <p align="center">
