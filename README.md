@@ -1,6 +1,6 @@
 
 <p align="center">
-	<h1>API REST backend Curso Nelio Alves</h1>
+	<strong>API REST backend Curso Nelio Alves</strong>
 </p>
 
 <p align="center">
